@@ -1,2 +1,1 @@
-# thesis-template
-Template for a (PhD) thesis
+# Template for a (PhD) thesis
