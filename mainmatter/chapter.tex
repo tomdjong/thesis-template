@@ -1,0 +1,84 @@
+\chapter{Some math environments}
+
+\lipsum[5]
+
+A few citations~\cite{SGA1,LaTeX}, a url \url{https://latex.org} and a forward
+reference to a result, see~\cref{thm} below.
+
+\section{Definitions, theorems and proofs}
+
+\begin{definition}\index{simplicial!hom-object}\index{simplicial!mor-object}
+  A \emph{\(C\)-simplicial hom-object} a lift of a monoid \(B \to C\) and a
+  \emph{\(C\)-simplicial mor-object} is...
+\end{definition}
+
+\begin{lemma}
+  The formula \(\sqrt a \cdot \sqrt b = \sqrt{ab}\) holds.
+  %
+  \nomenclature[sqrt]{$\sqrt{}$}{square root}
+\end{lemma}
+
+\begin{proposition}\index{functor}\index{foo}\index{bar}
+  If a functor \(F : \mathcal C \to \mathcal D\) is foo, then it is bar.
+  \nomenclature[C]{$\mathcal C$}{a category}
+\end{proposition}
+
+\section{Definitions, theorems and proofs}
+
+\lipsum[4]
+
+\subsection{Subsection 1}
+
+\lipsum[5]
+
+\subsection{Subsection 2}
+
+\lipsum[7]
+
+\begin{theorem}\label{thm}
+  A map \(f : A \to B\) is foo if and only if all its fibres are bar.
+\end{theorem}
+\begin{proof}
+  \lipsum[7]
+  \[
+    \int_0^\infty e^{-\alpha x^2} \mathrm{d}x =
+    \frac12\sqrt{\int_{-\infty}^\infty e^{-\alpha x^2}}
+    \mathrm{d}x\int_{-\infty}^\infty e^{-\alpha y^2}\mathrm{d}y =
+    \frac12\sqrt{\frac{\pi}{\alpha}}
+  \]
+  \lipsum[8]
+\end{proof}
+
+\begin{corollary}
+  This corollary is some immediate consequence of the theorem.
+\end{corollary}
+
+\begin{remark}
+  \lipsum[1-2]
+\end{remark}
+
+\begin{example}
+  \lipsum[5]
+\end{example}
+
+See~\cref{table} below.
+\begin{table}[h]%
+  \centering
+  \begin{tabular}{llp{4cm}l}\toprule
+    & Name & Affiliation & Email address \\\midrule
+    1. & Dr.~Abc Def
+       & University of Foo
+       & \href{mailto:abc.def@foo.ac.uk}{\texttt{abc.def@foo.ac.uk}} \\
+    2. & Prof.~Qwerty Xyz
+       & University of Bar
+       & \href{mailto:qwerty.xyz@bar.ac.uk}{\texttt{qwerty.xyz@bar.edu}}
+  \end{tabular}
+  \caption{The caption of a table.}
+  \label{table}
+\end{table}
+
+
+%%% Local Variables:
+%%% mode: latexmk
+%%% TeX-master: "../main"
+%%% End:
