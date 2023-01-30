@@ -2,7 +2,7 @@
 
 ## Overview of files
 - `main.pdf`
-  Can be found under *Releases*. Showcases the template
+  Can be found under *[Releases](https://github.com/tomdjong/thesis-template/releases/latest)*. Showcases the template
 - `macros.sty`
   Add your personal macros here
 - `packages.sty`
