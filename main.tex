@@ -58,6 +58,13 @@
   % The related thmtools' option "shaded" and the package mdframed seem to have
   % issues: the former does not allow for page breaks in shaded environments and
   % the latter puts double spacing between two shaded environments.
+  %
+  % Since tcolorbox puts stuff inside a minipage or \parbox (according to this
+  % stackexchange answer: https://tex.stackexchange.com/a/250170), new
+  % paragraphs aren't indented. We can fix this by grabbing the parindent
+  % value and passing it to tcbset.
+  \newlength{\normalparindent}
+  \AtBeginDocument{\setlength{\normalparindent}{\parindent}}
   \tcbset{shadedenv/.style={
       colback={#1},
       frame hidden,
@@ -69,7 +76,8 @@
       % LaTeX thinks this is too wide (as becomes clear from the many "Overfull
       % \hbox" warnings, but optically it looks spot on.
       add to width=1.1mm,
-      enlarge left by=-0.6mm}
+      enlarge left by=-0.6mm,
+      before upper={\setlength{\parindent}{\normalparindent}}}
   }
   \newcommand{\setenvcolor}[2]{%
       \tcolorboxenvironment{#1}{shadedenv={#2}}
