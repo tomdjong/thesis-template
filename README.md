@@ -33,6 +33,15 @@
 The coloured/shaded (math) environments can be toggled on/off (globally) using a
 boolean in `main.tex`.
 
+## Overfull `\hbox` warnings
+
+The (coloured) environments generate overfull `\hbox` warnings. This is known,
+as commented on in `main.tex`:
+```
+% LaTeX thinks this is too wide (as becomes clear from the many "Overfull
+% \hbox" warnings, but optically it looks spot on.
+```
+
 ## Index of symbols
 The `nomencl` package is used to generate the index of symbols. To set this
 package up with `latexmk`, you should add
