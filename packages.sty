@@ -126,14 +126,32 @@ backrefstyle=two]%
 , linkcolor=NavyBlue    % Colour for internal links
 , citecolor=Green  % Colour for bibliographical citations
 , urlcolor=BrickRed % Colour for (external) urls
-%
-% Metadata
-%
-, pdftitle={The Title of a PhD Thesis}%
-, pdfauthor={Jane Doe}%
-, pdfsubject={PhD thesis}%
-, pdfkeywords={some, descriptive, keywords}
 ]{hyperref}
+
+
+% Metadata setup (define using \subject, \degree, \institution, etc. in main.tex)
+\makeatletter
+
+\newcommand{\subject}[1]{\gdef\@subject{#1}}%
+\newcommand{\@subject}{PhD thesis} 
+\newcommand{\degree}[1]{\gdef\@degree{#1}}%
+\newcommand{\@degree}{Doctor of Philosophy}
+\newcommand{\institution}[1]{\gdef\@institution{#1}}%
+\newcommand{\@institution}{University of Foo}
+\newcommand{\school}[1]{\gdef\@school{#1}}%
+\newcommand{\college}[1]{\gdef\@college{#1}}%
+\newcommand{\keywords}[1]{\gdef\@keywords{#1}}%
+\newcommand{\@keywords}{some, descriptive, keywords} 
+
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author},
+    pdfsubject = {\@subject},
+    pdfkeywords = {\@keywords}
+  }
+}
+\makeatother
 
 \usepackage[noabbrev,capitalize]{cleveref}
 \creflabelformat{equation}{#2\textup{#1}#3} % Write Equation x.y.z instead of Equation (x.y.z)

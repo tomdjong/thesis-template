@@ -1,11 +1,12 @@
 \newgeometry{total={180mm,267mm}} % Make "A thesis submitted...the degree of" fit one line
+  \makeatletter
 \begin{titlepage}
 \begin{center}
   \vspace*{\stretch{0.5}}
 
   \large % Default size for the title page
 
-  {\Huge\textsc{The Title of a PhD Thesis}\par}
+  {\Huge\textsc{\@title}\par}
 
   \vspace{\stretch{0.2}}
 
@@ -13,20 +14,22 @@
 
   \vspace{\stretch{0.2}}
 
-  {\huge\textsc{Jane Doe}}
+  {\huge\textsc{\@author}}
+
 
   \vspace{\stretch{0.5}}
 
-  A thesis submitted to the University of Foo for the degree of\\
-  \textsc{Doctor of Philosophy}
+    A thesis submitted to the \@institution{} for the degree of\\
+  \textsc{\@degree}
 
   \vfill
 
   \flushright
-  School of Bar \\
-  College of Baz and Quz \\
-  University of Foo \\
-  January 2023
+    \@ifundefined{@school}{}{\@school \\}
+    \@ifundefined{@college}{}{\@college \\}
+    \@institution \\
+    \@date
 
 \end{center}
 \end{titlepage}
+  \makeatother
