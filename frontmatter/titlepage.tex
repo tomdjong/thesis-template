@@ -1,12 +1,14 @@
 \newgeometry{total={180mm,267mm}} % Make "A thesis submitted...the degree of" fit one line
   \makeatletter
+
+\providecommand{\displaytitle}{\@title}
 \begin{titlepage}
 \begin{center}
   \vspace*{\stretch{0.5}}
 
   \large % Default size for the title page
 
-  {\Huge\textsc{\@title}\par}
+  {\Huge\textsc{\displaytitle}\par}
 
   \vspace{\stretch{0.2}}
 
