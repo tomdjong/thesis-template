@@ -1,0 +1,95 @@
+
+\providecommand{\titleColor}{000000}
+\definecolor{titleColor}{HTML}{\titleColor}
+\providecommand{\infoPageColor}{000000}
+
+
+  \makeatletter
+
+\providecommand{\displaytitle}{\@title}
+\begin{titlepage}
+
+\ifcsname titleBg\endcsname
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=center] at (current page.center) {\includegraphics[height=297mm]{\titleBg}};
+    \end{tikzpicture}
+\fi
+
+\begin{center}
+    \color{titleColor}
+
+    \fontsize{45}{45}\selectfont
+
+{\textsc{\displaytitle}\par}
+
+\vspace{\stretch{0.4}}
+
+\noindent{\smaller[2]{by}}%
+
+\vspace{\stretch{0.2}}
+
+\noindent{\smaller[1]\textsc{\@author{}}}
+
+  \vfill
+
+    \noindent{}{\huge{\Large{}A thesis submitted to the}\\\textsc{\@institution{}}\\{\Large for the degree of}\\\textsc{\@degree}\\}
+\end{center}
+\clearpage
+
+    \pagestyle{plain}
+
+    {\setlength\arrayrulewidth{5pt}\arrayrulecolor[HTML]{\infoPageColor}
+
+    \noindent\emph{\@title}\\
+    A \@subject{} by \@author{}
+
+    \vspace{1cm}
+
+    \noindent\begin{tabular}{|ll}
+        \@ifundefined{@group}{}{\@group \\}%
+        \@ifundefined{@school}{}{\@school \\}%
+        \@ifundefined{@college}{}{\@college \\}%
+        \@institution
+    \end{tabular}
+
+    \vspace{1cm}
+    
+    \ifcsname dateInfo\endcsname
+    \noindent\begin{tabular}{|ll}
+        \dateInfo
+    \end{tabular}
+    \else
+    \noindent\@date
+    \fi
+
+    \vspace{1cm}
+
+    \ifcsname supervisionInfo\endcsname
+    \noindent\begin{tabular}{|ll}
+        \supervisionInfo
+    \end{tabular}
+
+    \vspace{1cm}
+
+    \fi
+
+    \ifcsname citationInfo\endcsname
+    \noindent\begin{tabular}{|ll}
+        \citationInfo
+    \end{tabular}
+
+    \vspace{1cm}
+
+    \fi
+
+    \ifcsname copyrightInfo\endcsname
+    \noindent\begin{tabular}{|ll}
+        \copyrightInfo
+    \end{tabular}
+
+    \vspace{1cm}
+
+    \fi
+    }
+\end{titlepage}
+  \makeatother

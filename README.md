@@ -17,7 +17,11 @@
 
 ### Front matter
 - `titlepage.tex`
-  You can tweak the title page here
+  Single title page (prints all data on the title page)
+- `titlepages.tex`
+  Title page (title, author, degree, and university) and info page with more detail.
+
+  Provides `\titleBg` and `\titleColor` macros to control background image and font colour of title page, respectively; and `\dateInfo`, `\supervisionInfo`, `\citationInfo`, and `\copyrightInfo` macros to supply further detail to be printed on info page (see sample).
 - `abstract.tex`
 - `acknowledgements.tex`
 

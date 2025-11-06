@@ -151,7 +151,7 @@ backrefstyle=two]%
 \makenomenclature%
 
 % Used in hyperref's setup, and must be loaded before tikz-cd.
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames,table]{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{tikz-cd}
 
@@ -168,11 +168,12 @@ backrefstyle=two]%
 \makeatletter
 
 \newcommand{\subject}[1]{\gdef\@subject{#1}}%
-\newcommand{\@subject}{PhD thesis} 
+\newcommand{\@subject}{doctoral thesis} 
 \newcommand{\degree}[1]{\gdef\@degree{#1}}%
 \newcommand{\@degree}{Doctor of Philosophy}
 \newcommand{\institution}[1]{\gdef\@institution{#1}}%
 \newcommand{\@institution}{University of Foo}
+\newcommand{\group}[1]{\gdef\@group{#1}}%
 \newcommand{\school}[1]{\gdef\@school{#1}}%
 \newcommand{\college}[1]{\gdef\@college{#1}}%
 \newcommand{\keywords}[1]{\gdef\@keywords{#1}}%
